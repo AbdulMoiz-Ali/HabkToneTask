@@ -3,11 +3,450 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - Blogging Website</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
-    <title>HavkTone</title>
   </head>
   <body>
-    <h1>HackTone Task</h1>
-    <script src="./app.js"></script>
+    <nav class="border-gray-200 dark:bg-gray-900">
+      <div class="flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <img
+            src="./picture/InShot_20240816_011740376.png"
+            style="width: 120px; height: 70px"
+            alt="Flowbite Logo"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >BlOger</span
+          >
+        </a>
+        <div
+          class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+          id="login"
+        >
+          <button
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+          >
+            <a
+              href="./auth/sidn-in/index.html"
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+            >
+              Login In
+            </a>
+          </button>
+        </div>
+        <div
+          class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
+          style="display: none"
+          id="detail"
+        >
+          <button
+            type="button"
+            class="inp-search flex text-sm bg-gray-800 rounded-full md:me-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            id="user-menu-button"
+            aria-expanded="false"
+            data-dropdown-toggle="user-dropdown"
+            data-dropdown-placement="bottom"
+          >
+            <span class="sr-only">Open user menu</span>
+            <img
+              class="w-8 h-8 rounded-full"
+              src="./picture/pngwing.com (1).png"
+              alt="user photo"
+            />
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
+            id="user-dropdown"
+          >
+            <div class="px-4 py-3">
+              <span
+                id="name-add"
+                class="block text-sm text-gray-900 dark:text-white"
+                >Bonnie Green</span
+              >
+              <span
+                id="email-add"
+                class="block text-sm text-gray-500 truncate dark:text-gray-400"
+                >name@flowbite.com</span
+              >
+            </div>
+            <ul class="py-2" aria-labelledby="user-menu-button">
+              <li>
+                <a
+                  href="./daschboard/index.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Dashboard</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Earnings</a
+                >
+              </li>
+              <li>
+                <a
+                  id="btn-logout"
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Sign out</a
+                >
+              </li>
+            </ul>
+          </div>
+          <button
+            data-collapse-toggle="navbar-user"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-user"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-user"
+        >
+          <div class="relative">
+            <div
+              class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
+            >
+              <svg
+                class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              id="default-search"
+              class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+              placeholder="Search Mockups, Logos..."
+              required
+              style="
+                width: 600px;
+                border: none;
+                background-color: transparent;
+                border-bottom: 3px solid blue;
+                border-radius: 0%;
+                margin: 0px;
+              "
+            />
+          </div>
+
+          <!-- <ul
+            class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Contact</a
+              >
+            </li>
+          </ul> -->
+        </div>
+      </div>
+    </nav>
+    <!-- <img
+      src="./"
+      alt=""
+      style="
+        width: 1458px;
+        height: 475px;
+        object-fit: cover;
+        object-position: 50% 100%;
+        z-index: -1;
+      "
+      width="980"
+      height="475"
+      fetchpriority="high"
+    /> -->
+    <div class="ban-main">
+      <h2 style="font-size: x-large; font-weight: bolder; font-family: emoji">
+        Travel Blog
+      </h2>
+      <h1
+        style="font-size: xxx-large; font-weight: bolder; font-family: cursive"
+      >
+        Going Places
+      </h1>
+      <h3 style="font-size: x-large; font-weight: bolder; font-family: emoji">
+        I haven’t been everywhere, but it’s on my list
+      </h3>
+    </div>
+    <h1 class="o-ser">Our Services</h1>
+    <div class="cards">
+      <figure
+        class="card relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+      >
+        <a href="#">
+          <img
+            class="rounded-lg"
+            src="./picture/5bfb6f_9f2519d5fc2d41f990a10dd92eb8658d.webp"
+            alt="image description"
+          />
+        </a>
+        <figcaption class="absolute px-4 text-lg text-white bottom-6">
+          <button class="btn-card">Travel</button>
+        </figcaption>
+      </figure>
+
+      <figure
+        class="card relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+      >
+        <a href="#">
+          <img
+            class="rounded-lg"
+            src="./picture/5bfb6f_ea37f67cad544b348df9f3d0ff40f282.jpg"
+            alt="image description"
+          />
+        </a>
+        <figcaption class="absolute px-4 text-lg text-white bottom-6">
+          <button class="btn-card">Eat</button>
+        </figcaption>
+      </figure>
+
+      <figure
+        class="card relative max-w-sm transition-all duration-300 cursor-pointer filter grayscale hover:grayscale-0"
+      >
+        <a href="#">
+          <img
+            class="rounded-lg"
+            src="./picture/5bfb6f_c667d0c9bd634b1aa2b29311795f3c51.jpg"
+            alt="image description"
+          />
+        </a>
+        <figcaption class="absolute px-4 text-lg text-white bottom-6">
+          <button class="btn-card">Relax</button>
+        </figcaption>
+      </figure>
+    </div>
+    <h1 class="o-ser">BLogs</h1>
+
+    <section class="bg-white dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+        <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+          <h2
+            class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Our Blog
+          </h2>
+          <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
+            We use an agile approach to test assumptions and connect with the
+            needs of your audience early and often.
+          </p>
+        </div>
+        <div class="grid gap-8 lg:grid-cols-2">
+          <article
+            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+              <span
+                class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+              >
+                <svg
+                  class="mr-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
+                  ></path>
+                </svg>
+                Tutorial
+              </span>
+              <span class="text-sm">14 days ago</span>
+            </div>
+            <h2
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              <a href="#">How to quickly deploy a static website</a>
+            </h2>
+            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+              Static websites are now used to bootstrap lots of websites and are
+              becoming the basis for a variety of tools that even influence both
+              web designers and developers influence both web designers and
+              developers.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-4">
+                <img
+                  class="w-7 h-7 rounded-full"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                  alt="Jese Leos avatar"
+                />
+                <span class="font-medium dark:text-white"> Jese Leos </span>
+              </div>
+              <a
+                href="#"
+                class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+              >
+                Read more
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+          <article
+            class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="flex justify-between items-center mb-5 text-gray-500">
+              <span
+                class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+              >
+                <svg
+                  class="mr-1 w-3 h-3"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                    clip-rule="evenodd"
+                  ></path>
+                  <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"></path>
+                </svg>
+                Article
+              </span>
+              <span class="text-sm">14 days ago</span>
+            </div>
+            <h2
+              class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              <a href="#">Our first project with React</a>
+            </h2>
+            <p class="mb-5 font-light text-gray-500 dark:text-gray-400">
+              Static websites are now used to bootstrap lots of websites and are
+              becoming the basis for a variety of tools that even influence both
+              web designers and developers influence both web designers and
+              developers.
+            </p>
+            <div class="flex justify-between items-center">
+              <div class="flex items-center space-x-4">
+                <img
+                  class="w-7 h-7 rounded-full"
+                  src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                  alt="Bonnie Green avatar"
+                />
+                <span class="font-medium dark:text-white"> Bonnie Green </span>
+              </div>
+              <a
+                href="#"
+                class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+              >
+                Read more
+                <svg
+                  class="ml-2 w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bottom-0 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600"
+    >
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+        >© 2024 <a href="" class="hover:underline">BlOger</a>. All Rights
+        Reserved.
+      </span>
+      <h1>Devalop By <span style="color: navy">MOiz Ali</span></h1>
+    </footer>
+    <script type="module" src="./app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
   </body>
 </html>
