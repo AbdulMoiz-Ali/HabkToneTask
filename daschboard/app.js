@@ -1,8 +1,6 @@
 import {
-    auth, signOut, doc, getDoc, db, updateDoc, getStorage, ref, uploadBytes, getDownloadURL, onAuthStateChanged, setDoc, storage
+    auth, signOut, collection, doc, getDoc, db, updateDoc, getStorage, ref, uploadBytes, getDownloadURL, onAuthStateChanged, addDoc, setDoc, storage
 } from "./../configration/app.js";
-
-
 onAuthStateChanged(auth, (user) => {
     if (user) {
         const uid = user.uid;
@@ -19,6 +17,7 @@ onAuthStateChanged(auth, (user) => {
                     "currentUser",
                     JSON.stringify({ uid, firstName: userData.firstname })
                 );
+                getAllProducts();
                 // getAllProducts();
             })
             .catch((err) => {
@@ -64,18 +63,20 @@ createmodel.addEventListener("submit", (e) => {
     };
     console.log(userdate);
 
-    uploadBytes(storageRef, file)
-        .then((snapshot) => {
-            getDownloadURL(storageRef).then((url) => {
-                addDoc(productsCollection, {
-                    title: title,
-                    description: description,
-                    image: url,
-                });
-                console.log(url, "-->");
+    const storageRef = ref(storage, file.name);
+    uploadBytes(storageRef, file).then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+            const productData = {
+                title,
+                description,
+                picture: url,
+                createdBy: currentUser.uid,
+            };
+            addDoc(collection(db, "products"), productData).then((snapshot) => {
+                // loader display none
+                window.location.href = "./index.html";
             });
-        })
-        .catch((err) => {
-            console.log(err, "======");
         });
-})
+    })
+});
