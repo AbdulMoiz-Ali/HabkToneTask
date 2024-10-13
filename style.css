@@ -106,9 +106,11 @@ footer {
   flex-direction: column;
   padding: 100px;
 }
+
 .inp-search:focus {
   border: none;
 }
+
 .o-ser {
   font-size: xx-large;
   display: flex;
@@ -118,6 +120,7 @@ footer {
   padding: 10px;
   margin: 20px;
 }
+
 .cards {
   display: flex;
   justify-content: space-around;
@@ -126,11 +129,13 @@ footer {
   margin: 5px;
   padding: 10px;
 }
+
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .btn-card {
   background-color: transparent;
   border: 1px solid silver;
@@ -139,8 +144,24 @@ footer {
   border-radius: 10px;
   font-size: larger;
 }
+
 .btn-card:hover {
   background-color: blue;
   color: silver;
   border: none;
+}
+
+.product-manage {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* .card-with-set {
+  height: 300px;
+  width: 250px;
+} */
+.img-set{
+  height: 200px;
+  width: 300px;
 }
